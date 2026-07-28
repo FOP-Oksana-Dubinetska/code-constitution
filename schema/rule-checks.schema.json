@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/rule-checks.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "rules"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": "1.0.0" },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["ruleId", "coverageStatus", "invariants"],
+        "properties": {
+          "ruleId": { "type": "string", "pattern": "^(BASE|KCR)-[A-Z0-9]+$" },
+          "coverageStatus": {
+            "enum": ["implemented", "partial", "bootstrap-pending"]
+          },
+          "invariants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "invariantId",
+                "mechanism",
+                "fixtureIds",
+                "evidence"
+              ],
+              "properties": {
+                "invariantId": { "type": "string" },
+                "mechanism": { "enum": ["automated", "human-review"] },
+                "command": { "type": "string" },
+                "fixtureIds": {
+                  "type": "array",
+                  "items": { "type": "string" },
+                  "uniqueItems": true
+                },
+                "evidence": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 38,
+      "maxItems": 38
+    }
+  },
+  "additionalProperties": false
+}

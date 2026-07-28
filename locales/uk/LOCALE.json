@@ -1,0 +1,7 @@
+{
+  "$schema": "../../schema/locale.schema.json",
+  "code": "uk",
+  "status": "planned",
+  "sourceLocale": "ru",
+  "responsibleRole": "translation_reviewer"
+}

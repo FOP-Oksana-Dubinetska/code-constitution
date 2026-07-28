@@ -1,0 +1,10 @@
+{
+  "$schema": "../schema/provenance.schema.json",
+  "schemaVersion": "1.0.0",
+  "source": "locales/ru/CONSTITUTION_CODE.md",
+  "sourceSha256": "7f16740c063cbba75b885b911201b06c8a173e332ba585ec08f2e0c28acb9623",
+  "provisionNamespace": "kc",
+  "provisionCount": 334,
+  "derivedFrom": [],
+  "retiredIds": []
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/tools.schema.json",
+  "type": "object",
+  "required": ["node", "npm", "packageManager", "lockfile"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "node": { "const": "24.18.0" },
+    "npm": { "const": "11.18.0" },
+    "packageManager": { "const": "npm@11.18.0" },
+    "lockfile": { "const": "package-lock.json" }
+  },
+  "additionalProperties": false
+}

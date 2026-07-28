@@ -1,0 +1,6 @@
+.licensing-policy/
+locales/ru/CONSTITUTION_CODE.md
+locales/ru/governance/**/*.md
+reports/editorial/*.md
+node_modules/
+dist/

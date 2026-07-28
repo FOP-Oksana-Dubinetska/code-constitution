@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/profile.schema.json",
+  "type": "object",
+  "required": ["id", "revision", "constitutionSha256", "status"],
+  "properties": {
+    "id": { "const": "kcr-profile-001" },
+    "revision": { "const": "0.3.0-draft" },
+    "constitutionSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "status": { "enum": ["draft", "ratified"] }
+  },
+  "additionalProperties": false
+}

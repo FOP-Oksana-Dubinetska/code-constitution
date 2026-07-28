@@ -1,0 +1,273 @@
+{
+  "$schema": "../schema/rule-checks.schema.json",
+  "schemaVersion": "1.0.0",
+  "rules": [
+    {
+      "ruleId": "BASE-S01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-S01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-S02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-S03",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-S04",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-T01",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "pinned-runtime",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": [],
+          "evidence": "An automated test compares exact Node.js and npm versions in tools.json with the CI workflow; runtime enforcement outside CI remains pending."
+        }
+      ]
+    },
+    {
+      "ruleId": "KCR-T01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-T02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-C01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-C01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-C02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-C02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-F01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-F02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-F03",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-F04",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-F01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-L01",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "eslint-flat-config",
+          "mechanism": "automated",
+          "command": "npm run lint",
+          "fixtureIds": [],
+          "evidence": "ESLint executes the flat configuration without warnings for included source and test files; complete rule-profile enforcement and linting of eslint.config.js remain pending."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-L02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-L03",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-L04",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-N01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-N02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-N03",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-A01",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "domain-import-direction",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": [],
+          "evidence": "The TypeScript AST architecture test scans every current TypeScript file under constitution-corpus/domain and rejects imports and re-exports of Node.js built-ins, application, adapter, and CLI modules. It covers static, side-effect, dynamic literal, node:-prefixed, bare built-in, and export-from syntax. Application-to-adapter direction, module cycles, non-literal dynamic imports, and other subject areas remain pending."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-A02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-A01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-A02",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "byte-exact-round-trip",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": ["fixture-corpus-round-trip-positive-001"],
+          "evidence": "Byte slices preserve unchanged source text; changed-part candidate handling and rejection of the previous hash remain pending."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-Q01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "KCR-Q01",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "provision-id-uniqueness",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": ["fixture-duplicate-id-negative-001"],
+          "evidence": "The indexer rejects duplicate AST provision anchors."
+        },
+        {
+          "invariantId": "provision-presence",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": ["fixture-empty-corpus-negative-001"],
+          "evidence": "The pipeline rejects a corpus without provisions."
+        },
+        {
+          "invariantId": "fenced-anchor-exclusion",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": ["fixture-fenced-anchor-negative-001"],
+          "evidence": "AST node classification excludes fenced code content."
+        },
+        {
+          "invariantId": "canonical-source-hash",
+          "mechanism": "automated",
+          "command": "npm run check:data",
+          "fixtureIds": ["fixture-corpus-hash-negative-001"],
+          "evidence": "CLI validation compares source SHA-256 and provision count with provenance."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-Q02",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "coverage-registry-shape",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": [],
+          "evidence": "Schema validation and a source-derived exact-set test cover registry shape, rule ID uniqueness, and all 38 current rule IDs; evidence completeness remains pending."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-Q03",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "single-check-command",
+          "mechanism": "automated",
+          "command": "npm run check",
+          "fixtureIds": [],
+          "evidence": "The CI workflow invokes the local check contract; generated-output cleanliness, exception handling, and full release evidence remain pending."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-Q04",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-D01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-D02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-D03",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-X01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-X02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    }
+  ]
+}

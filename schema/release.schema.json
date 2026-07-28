@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/release.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "observation", "status"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "status": { "const": "candidate" },
+    "observation": {
+      "type": "object",
+      "required": ["gitCommit", "nodeVersion", "npmVersion", "observedAt"],
+      "properties": {
+        "gitCommit": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "nodeVersion": { "type": "string" },
+        "npmVersion": { "type": "string" },
+        "observedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

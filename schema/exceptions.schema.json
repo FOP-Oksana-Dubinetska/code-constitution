@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/exceptions.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "exceptions"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "ruleId",
+          "scope",
+          "expiresAt",
+          "authority",
+          "rationale"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^kcr-exception-[0-9]{3}$" },
+          "ruleId": { "type": "string" },
+          "scope": { "type": "string" },
+          "expiresAt": { "type": "string", "format": "date-time" },
+          "authority": { "type": "string" },
+          "rationale": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

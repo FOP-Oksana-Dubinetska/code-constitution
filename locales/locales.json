@@ -1,0 +1,6 @@
+{
+  "$schema": "../schema/locales.schema.json",
+  "schemaVersion": "1.0.0",
+  "normativeLocale": "ru",
+  "locales": ["ru", "uk", "en"]
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "../../schema/fixture.schema.json",
+  "fixtures": [
+    {
+      "id": "fixture-corpus-round-trip-positive-001",
+      "purpose": "Prove byte-exact unchanged assembly",
+      "origin": "locales/ru/CONSTITUTION_CODE.md",
+      "rules": ["KCR-A02", "KCR-Q01"],
+      "expected": "success",
+      "kind": "positive"
+    },
+    {
+      "id": "fixture-duplicate-id-negative-001",
+      "purpose": "Prove duplicate provision rejection",
+      "origin": "inline minimal reproduction",
+      "rules": ["KCR-Q01"],
+      "expected": "invariant violation",
+      "kind": "negative"
+    },
+    {
+      "id": "fixture-empty-corpus-negative-001",
+      "purpose": "Prove rejection of a corpus without provisions",
+      "origin": "inline minimal reproduction",
+      "rules": ["KCR-Q01"],
+      "expected": "invariant violation",
+      "kind": "negative"
+    },
+    {
+      "id": "fixture-fenced-anchor-negative-001",
+      "purpose": "Prove fenced anchors are excluded from provisions",
+      "origin": "inline minimal reproduction",
+      "rules": ["KCR-Q01"],
+      "expected": "invariant violation",
+      "kind": "negative"
+    },
+    {
+      "id": "fixture-corpus-hash-negative-001",
+      "purpose": "Prove canonical hash mismatch rejection",
+      "origin": "inline typed model",
+      "rules": ["KCR-Q01"],
+      "expected": "invariant violation",
+      "kind": "negative"
+    }
+  ]
+}

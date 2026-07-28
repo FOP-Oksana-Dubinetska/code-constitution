@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/fixture.schema.json",
+  "type": "object",
+  "required": ["fixtures"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "purpose", "origin", "rules", "expected", "kind"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^fixture-[a-z0-9-]+-[0-9]{3}$"
+          },
+          "purpose": { "type": "string" },
+          "origin": { "type": "string" },
+          "rules": { "type": "array", "items": { "type": "string" } },
+          "expected": { "type": "string" },
+          "kind": { "enum": ["positive", "negative"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

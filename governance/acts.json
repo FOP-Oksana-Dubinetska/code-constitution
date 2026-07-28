@@ -1,0 +1,24 @@
+{
+  "$schema": "../schema/acts.schema.json",
+  "schemaVersion": "1.0.0",
+  "acts": [
+    {
+      "id": "kcr-profile-001",
+      "path": "locales/ru/governance/PROFILE.md",
+      "revision": "0.3.0-draft",
+      "status": "draft"
+    },
+    {
+      "id": "kcr-act-development-001",
+      "path": "locales/ru/governance/legislation/DEVELOPMENT.md",
+      "revision": "0.3.0-draft",
+      "status": "draft"
+    },
+    {
+      "id": "kcr-glossary-001",
+      "path": "locales/ru/governance/GLOSSARY.md",
+      "revision": "0.2.0-draft",
+      "status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "$schema": "../schema/distribution.schema.json",
+  "schemaVersion": "1.0.0",
+  "source": "locales/ru/CONSTITUTION_CODE.md",
+  "parts": []
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/locale.schema.json",
+  "type": "object",
+  "required": ["code", "status", "sourceLocale", "responsibleRole"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "code": { "enum": ["ru", "uk", "en"] },
+    "status": { "enum": ["normative", "planned", "informative"] },
+    "sourceLocale": { "type": ["string", "null"] },
+    "responsibleRole": { "type": "string", "minLength": 1 }
+  },
+  "additionalProperties": false
+}

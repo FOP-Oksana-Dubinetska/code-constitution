@@ -1,0 +1,7 @@
+{
+  "$schema": "./schema/tools.schema.json",
+  "node": "24.18.0",
+  "npm": "11.18.0",
+  "packageManager": "npm@11.18.0",
+  "lockfile": "package-lock.json"
+}

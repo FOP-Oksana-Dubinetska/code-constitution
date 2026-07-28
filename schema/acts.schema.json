@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/acts.schema.json",
+  "type": "object",
+  "required": ["schemaVersion", "acts"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": "1.0.0" },
+    "acts": { "type": "array", "items": { "$ref": "#/$defs/act" } }
+  },
+  "$defs": {
+    "act": {
+      "type": "object",
+      "required": ["id", "path", "revision", "status"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^kcr-[a-z-]+-[0-9]{3}$" },
+        "path": { "type": "string" },
+        "revision": { "type": "string" },
+        "status": { "const": "draft" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
