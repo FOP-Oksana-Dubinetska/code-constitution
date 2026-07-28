@@ -11,7 +11,7 @@
     "build": "tsc -p tsconfig.json",
     "format": "prettier --check . --ignore-unknown",
     "format:write": "prettier --write . --ignore-unknown",
-    "lint": "eslint . --max-warnings=0 && markdownlint-cli2 **/*.md #.licensing-policy/** #node_modules/**",
+    "lint": "eslint . --max-warnings=0 && markdownlint-cli2 \"**/*.md\" \"#.licensing-policy/**\" \"#node_modules/**\"",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check:data": "tsx src/constitution-cli/main.ts validate",
