@@ -1,106 +1,107 @@
-# Нормативный перевод позднего корпуса из семи работ
+# Normative Translation of the Later Seven-Work Corpus
 
-Идентификатор изменения: `kcr-change-2026-07-30-seven-works`.
+Change identifier: `kcr-change-2026-07-30-seven-works`.
 
-Статус: кандидат к нормативному рассмотрению.
+Status: candidate for normative consideration.
 
-Основание: последовательное исследование работ Lawrence Lessig, Joel
-Reidenberg, James Grimmelmann, Primavera De Filippi и Samer Hassan, Pedro
-Antonino и соавторов, Srinivas Rao Marri, Aristidis Vasilopoulos.
+Basis: consecutive study of works by Lawrence Lessig, Joel Reidenberg, James
+Grimmelmann, Primavera De Filippi and Samer Hassan, Pedro Antonino and
+co-authors, Srinivas Rao Marri, and Aristidis Vasilopoulos.
 
-## Результат классификации
+## Classification Result
 
-- новых конституционных положений: `0`;
-- уточнённых положений: `2` — `kc-0034`, `kc-0047`;
-- новых вопросов Карты: `0`;
-- уточнённых вопросов Карты: `2` — `q-kc-0034`, `q-kc-0047`;
-- новых правил Законодательства: `2` — `BASE-C03`, `BASE-C04`;
-- внешних интеграционных слоёв: `1` — адаптер Prompt-Literate Workflow.
+- new constitutional provisions: `0`;
+- clarified provisions: `2` — `kc-0034`, `kc-0047`;
+- new Question Map questions: `0`;
+- clarified Question Map questions: `2` — `q-kc-0034`, `q-kc-0047`;
+- new Legislation rules: `2` — `BASE-C03`, `BASE-C04`;
+- external integration layers: `1` — the Prompt-Literate Workflow adapter.
 
-## Перевод в `kc-0034`
+## Translation into `kc-0034`
 
-### Исходная функция
+### Source Function
 
-De Filippi и Hassan выявляют потери гибкости и неоднозначности при переводе
-нормативного текста в исполнимую форму. Antonino и соавторы отделяют доверенную
-спецификацию от реализации и проверяют второй переход автоматически.
+De Filippi and Hassan identify the loss of flexibility and ambiguity when
+normative text is translated into executable form. Antonino and co-authors
+separate a trusted specification from its implementation and check the second
+transition automatically.
 
-### Сохранённое содержание
+### Preserved Substance
 
-- нормативный перевод образует самостоятельный предмет рассмотрения;
-- сохранённые, суженные и исключённые условия получают явную запись;
-- значения по умолчанию и остаточное человеческое усмотрение входят в
-  проверяемый результат;
-- переход `норма → спецификация` проверяется отдельно от перехода
-  `спецификация → реализация`.
+- normative translation constitutes an independent subject of review;
+- preserved, narrowed, and excluded conditions receive an express record;
+- defaults and residual human discretion form part of the checked result;
+- the `norm → specification` transition is checked separately from the
+  `specification → implementation` transition.
 
-### Граница переноса
+### Boundary of Translation
 
-Формальная спецификация не получает самостоятельной высшей силы. Её сила
-следует из признанного основания, компетенции и процедуры действующего
-порядка. Специфика Ethereum и необратимость смарт-контракта остаются
-предметными особенностями исходных исследований.
+A formal specification does not acquire independent superior force. Its force
+follows from a recognized basis, competence, and the procedure of the operative
+order. Ethereum-specific features and the irreversibility of a smart contract
+remain subject-matter characteristics of the source studies.
 
-## Перевод в `kc-0047`
+## Translation into `kc-0047`
 
-### Исходная функция
+### Source Function
 
-Lessig, Reidenberg и Grimmelmann показывают, что архитектура, интерфейсы,
-стандарты, конфигурации, значения по умолчанию и программное исполнение
-формируют доступные действия и фактические ограничения.
+Lessig, Reidenberg, and Grimmelmann show that architecture, interfaces,
+standards, configurations, defaults, and software execution shape available
+actions and de facto constraints.
 
-### Сохранённое содержание
+### Preserved Substance
 
-- техническое регулирование охватывает разрешение, предписание, затруднение,
-  действие по умолчанию и исключение;
-- технический регулятор получает точное нормативное основание, редакцию,
-  область, затронутых участников и владельца;
-- наблюдаемый эффект, оспаривание и обновление входят в человеческий порядок
-  управления механизмом.
+- technical regulation encompasses permission, prescription, impediment,
+  default action, and exclusion;
+- a technical regulator receives an exact normative basis, revision, scope,
+  affected participants, and owner;
+- observed effect, contestation, and update form part of the human procedure
+  governing the mechanism.
 
-### Граница переноса
+### Boundary of Translation
 
-Фактический регулятивный эффект не учреждает полномочие автоматически.
-Незарегистрированный механизм учитывается как материальная практика и дефект
-контроля, сохраняя необходимость безопасного перехода.
+A de facto regulatory effect does not automatically institute authority. An
+unregistered mechanism is treated as a material practice and control defect
+while preserving the requirement of safe transition.
 
-## Перевод в Законодательство
+## Translation into Legislation
 
-`BASE-C03` устанавливает обязательную запись нормативного перевода.
-`BASE-C04` учреждает реестр технических регуляторов. Для репозитория
-«Конституции кода» реестр получает путь
-`manifest/technical-regulators.json`, собственную JSON Schema и проверку
-разрешимости оснований.
+`BASE-C03` establishes a mandatory normative-translation record. `BASE-C04`
+institutes the technical-regulator registry. For the Code Constitution
+repository, the registry receives the path
+`manifest/technical-regulators.json`, its own JSON Schema, and a check that its
+bases resolve.
 
-Слово «существенно» в `BASE-C04` сохраняет человеческое усмотрение. Критериями
-служат изменение доступного действия, обязательного значения, возможности
-поставки, доступа, выпуска, наблюдения или восстановления. Спорная
-классификация направляется по P08.
+The word “materially” in `BASE-C04` preserves human discretion. The criteria are
+a change to an available action, mandatory value, or the ability to deliver,
+access, release, observe, or restore. A disputed classification is referred
+under P08.
 
-## Перевод в LLM-процесс
+## Translation into the LLM Process
 
-Marri и Vasilopoulos обосновывают версионируемый конституционный контекст,
-трассировку к спецификациям и организацию памяти агентного процесса. Эти
-функции реализуются внешним адаптером Prompt-Literate Workflow:
+Marri and Vasilopoulos support versioned constitutional context, traceability to
+specifications, and organization of agent-process memory. These functions are
+implemented by the external Prompt-Literate Workflow adapter:
 
-- обе редакции источников закрепляются полными Git SHA;
-- Конституция, Профиль и Законодательство управляют полномочиями и принятием;
-- human-authored PLW-план управляет замыслом и границами конкретной операции;
-- контракт, сценарий, кандидат, проверка и TRACE сохраняют отдельные функции;
-- конфликт или отсутствие полномочия останавливает запуск;
-- LLM не принимает и не ратифицирует собственный результат.
+- both source revisions are fixed by complete Git SHAs;
+- the Constitution, Profile, and Legislation govern authority and adoption;
+- the human-authored PLW plan governs the intention and boundaries of a
+  particular operation;
+- contract, scenario, candidate, check, and TRACE preserve separate functions;
+- conflict or absence of authority stops the run;
+- an LLM neither adopts nor ratifies its own result.
 
-Интеграционный адаптер остаётся за пределами универсального нормативного
-корпуса «Конституции кода». Корневой README содержит только ссылку и краткое
-объяснение статуса.
+The integration adapter remains outside the universal normative Code
+Constitution corpus. The root README contains only a link and a brief
+explanation of its status.
 
-## Проверка
+## Verification
 
-- `334` уникальных `kc-*` после уточнения;
-- `334` уникальных `q-kc-*` с полным совпадением множеств;
-- новый SHA-256 Конституции:
+- `334` unique `kc-*` identifiers after clarification;
+- `334` unique `q-kc-*` identifiers with exact equality of the sets;
+- new Constitution SHA-256:
   `864bf72a9072d394d77d09de40089f8f0f3ecc0ff8f77c41ef173f0852adf2ee`;
-- отдельная техническая проверка `41` правила Законодательства, включая ранее
-  не охваченный реестром `BASE-CSS-N01`;
-- отдельная схема и проверка реестра технических регуляторов;
-- полный проход `npm ci` и `npm run check` после инженерной интеграции.
+- a separate technical check of `41` Legislation rules, including the
+  previously unregistered `BASE-CSS-N01`;
+- a separate schema and check for the technical-regulator registry;
+- a full `npm ci` and `npm run check` pass after engineering integration.

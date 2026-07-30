@@ -1,7 +1,12 @@
 {
   "$schema": "../../schema/locale.schema.json",
   "code": "uk",
-  "status": "planned",
+  "status": "informative",
   "sourceLocale": "ru",
+  "sourceSha256": "864bf72a9072d394d77d09de40089f8f0f3ecc0ff8f77c41ef173f0852adf2ee",
+  "translator": "OpenAI Codex (machine-assisted draft)",
+  "reviewer": "Oksana Dubinetska",
+  "lastStructuralCheck": "2026-07-30",
+  "lastSubstantiveReview": "2026-07-30",
   "responsibleRole": "translation_reviewer"
 }

@@ -27,7 +27,8 @@ describe("act registry", () => {
 			const act = {
 				id: "kcr-profile-001",
 				path: "locales/ru/governance/PROFILE.md",
-				revision: "0.4.0-draft",
+				language: "ru",
+				revision: "0.5.0-draft",
 				status,
 			} as unknown as RegisteredAct;
 

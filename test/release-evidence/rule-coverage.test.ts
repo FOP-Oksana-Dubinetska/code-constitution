@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 describe("rule coverage registry", () => {
 	it("contains the exact unique set of all 41 development rule IDs", async () => {
 		const development = await readFile(
-			"locales/ru/governance/legislation/DEVELOPMENT.md",
+			"governance/legislation/DEVELOPMENT.md",
 			"utf8",
 		);
 		const expected = [

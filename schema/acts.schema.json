@@ -5,16 +5,17 @@
   "required": ["schemaVersion", "acts"],
   "properties": {
     "$schema": { "type": "string" },
-    "schemaVersion": { "const": "1.0.0" },
+    "schemaVersion": { "const": "1.1.0" },
     "acts": { "type": "array", "items": { "$ref": "#/$defs/act" } }
   },
   "$defs": {
     "act": {
       "type": "object",
-      "required": ["id", "path", "revision", "status"],
+      "required": ["id", "path", "language", "revision", "status"],
       "properties": {
         "id": { "type": "string", "pattern": "^kcr-[a-z-]+-[0-9]{3}$" },
         "path": { "type": "string" },
+        "language": { "enum": ["ru", "uk", "en"] },
         "revision": { "type": "string" },
         "status": { "const": "draft" }
       },

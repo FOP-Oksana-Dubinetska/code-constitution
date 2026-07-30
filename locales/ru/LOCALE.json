@@ -3,5 +3,10 @@
   "code": "ru",
   "status": "normative",
   "sourceLocale": null,
+  "sourceSha256": "864bf72a9072d394d77d09de40089f8f0f3ecc0ff8f77c41ef173f0852adf2ee",
+  "translator": null,
+  "reviewer": null,
+  "lastStructuralCheck": "2026-07-30",
+  "lastSubstantiveReview": null,
   "responsibleRole": "founding_holder"
 }

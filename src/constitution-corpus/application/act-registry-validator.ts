@@ -3,6 +3,7 @@ import { CorpusInvariantError } from "../domain/corpus.js";
 export interface RegisteredAct {
 	readonly id: string;
 	readonly path: string;
+	readonly language: "ru" | "uk" | "en";
 	readonly revision: string;
 	readonly status: "draft";
 }
@@ -23,11 +24,12 @@ export class ActRegistryValidator {
 			}
 
 			const source = await this.documentReader.readText(act.path);
-			const identifier = /Идентификатор (?:документа|акта): `([^`]+)`\./.exec(
-				source,
-			)?.[1];
-			const revision = /Редакция: `([^`]+)`\./.exec(source)?.[1];
-			const draft = /^## Проект/m.test(source);
+			const identifier =
+				/(?:Идентификатор (?:документа|акта)|(?:Document|Act) identifier): `([^`]+)`\./.exec(
+					source,
+				)?.[1];
+			const revision = /(?:Редакция|Revision): `([^`]+)`\./.exec(source)?.[1];
+			const draft = /^## (?:Проект|Draft)(?:\s|$)/m.test(source);
 
 			if (identifier !== act.id) {
 				throw new CorpusInvariantError(

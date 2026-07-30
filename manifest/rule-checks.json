@@ -19,8 +19,16 @@
     },
     {
       "ruleId": "KCR-S03",
-      "coverageStatus": "bootstrap-pending",
-      "invariants": []
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "locale-manifest-and-structure",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": [],
+          "evidence": "Schema and structural-parity tests validate the normative and repository-default locales, translation attribution and recorded review metadata, 334 provision IDs, 18 Profile fields, and 47 Glossary terms; substantive accuracy is established by the named human review rather than automation."
+        }
+      ]
     },
     {
       "ruleId": "KCR-S04",
@@ -252,7 +260,7 @@
           "mechanism": "automated",
           "command": "npm test",
           "fixtureIds": [],
-          "evidence": "A source-derived test requires exactly 334 unique provision IDs and 334 unique question IDs, exact q-kc to kc parity, canonical links, and the declared source hash."
+          "evidence": "A source-derived test requires in every declared locale exactly 334 unique provision IDs and 334 unique question IDs, exact q-kc to kc parity, local canonical links, and the declared Russian source hash."
         }
       ]
     },
