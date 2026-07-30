@@ -12,6 +12,10 @@ const contracts = [
 	["schema/provenance.schema.json", "manifest/provenance.json"],
 	["schema/distribution.schema.json", "manifest/distribution.json"],
 	["schema/rule-checks.schema.json", "manifest/rule-checks.json"],
+	[
+		"schema/technical-regulators.schema.json",
+		"manifest/technical-regulators.json",
+	],
 	["schema/tools.schema.json", "tools.json"],
 	["schema/fixture.schema.json", "test/fixtures/fixture-manifest.json"],
 ] as const;
@@ -31,6 +35,7 @@ describe("JSON data contracts", () => {
 			"schema/provenance.schema.json",
 			"schema/release.schema.json",
 			"schema/rule-checks.schema.json",
+			"schema/technical-regulators.schema.json",
 			"schema/tools.schema.json",
 		];
 		for (const schemaPath of schemaPaths) {

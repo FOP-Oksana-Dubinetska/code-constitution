@@ -12,7 +12,10 @@
         "type": "object",
         "required": ["ruleId", "coverageStatus", "invariants"],
         "properties": {
-          "ruleId": { "type": "string", "pattern": "^(BASE|KCR)-[A-Z0-9]+$" },
+          "ruleId": {
+            "type": "string",
+            "pattern": "^(BASE|KCR)-[A-Z0-9]+(?:-[A-Z0-9]+)*$"
+          },
           "coverageStatus": {
             "enum": ["implemented", "partial", "bootstrap-pending"]
           },
@@ -43,8 +46,8 @@
         },
         "additionalProperties": false
       },
-      "minItems": 38,
-      "maxItems": 38
+      "minItems": 41,
+      "maxItems": 41
     }
   },
   "additionalProperties": false

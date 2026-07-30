@@ -5,13 +5,13 @@
     {
       "id": "kcr-profile-001",
       "path": "locales/ru/governance/PROFILE.md",
-      "revision": "0.3.0-draft",
+      "revision": "0.4.0-draft",
       "status": "draft"
     },
     {
       "id": "kcr-act-development-001",
       "path": "locales/ru/governance/legislation/DEVELOPMENT.md",
-      "revision": "0.3.0-draft",
+      "revision": "0.4.0-draft",
       "status": "draft"
     },
     {

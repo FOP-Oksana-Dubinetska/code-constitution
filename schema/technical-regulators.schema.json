@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/FOP-Oksana-Dubinetska/code-constitution/schema/technical-regulators.schema.json",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "registryRevision",
+    "regulators",
+    "externalSettings"
+  ],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": "1.0.0" },
+    "registryRevision": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+-draft$"
+    },
+    "regulators": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/technicalRegulator" }
+    },
+    "externalSettings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/externalSetting" }
+    }
+  },
+  "$defs": {
+    "normativeBasis": {
+      "type": "object",
+      "required": ["id", "source", "revision"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^(kc-[0-9]{4}|P[0-9]{2}|(?:BASE|KCR)-[A-Z0-9]+(?:-[A-Z0-9]+)*)$"
+        },
+        "source": { "type": "string", "minLength": 1 },
+        "revision": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "defaultValue": {
+      "type": "object",
+      "required": ["name", "value"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "value": {
+          "anyOf": [
+            { "type": "string" },
+            { "type": "number" },
+            { "type": "boolean" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "technicalRegulator": {
+      "type": "object",
+      "required": [
+        "id",
+        "normativeBasis",
+        "kind",
+        "effect",
+        "scope",
+        "affectedParticipants",
+        "owner",
+        "configurationPaths",
+        "defaults",
+        "observation",
+        "changeProcedure",
+        "challengeProcedure",
+        "disableProcedure",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^kcr-regulator-[a-z0-9]+(?:-[a-z0-9]+)*-[0-9]{3}$"
+        },
+        "normativeBasis": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/normativeBasis" }
+        },
+        "kind": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "effect": {
+          "enum": [
+            "permit",
+            "require",
+            "hinder",
+            "default",
+            "prohibit",
+            "observe"
+          ]
+        },
+        "scope": { "type": "string", "minLength": 1 },
+        "affectedParticipants": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "owner": { "type": "string", "minLength": 1 },
+        "configurationPaths": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "defaults": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/defaultValue" }
+        },
+        "observation": { "type": "string", "minLength": 1 },
+        "changeProcedure": { "type": "string", "minLength": 1 },
+        "challengeProcedure": { "type": "string", "minLength": 1 },
+        "disableProcedure": { "type": "string", "minLength": 1 },
+        "status": {
+          "enum": ["active", "partial", "planned", "disabled"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "externalSetting": {
+      "type": "object",
+      "required": [
+        "id",
+        "provider",
+        "scope",
+        "status",
+        "observation",
+        "lastObservedAt",
+        "claim"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^kcr-external-[a-z0-9]+(?:-[a-z0-9]+)*-[0-9]{3}$"
+        },
+        "provider": { "type": "string", "minLength": 1 },
+        "scope": { "type": "string", "minLength": 1 },
+        "status": { "enum": ["active", "inactive", "unverified"] },
+        "observation": { "type": "string", "minLength": 1 },
+        "lastObservedAt": {
+          "anyOf": [
+            { "type": "string", "format": "date-time" },
+            { "type": "null" }
+          ]
+        },
+        "claim": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

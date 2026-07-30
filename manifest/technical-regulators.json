@@ -1,0 +1,238 @@
+{
+  "$schema": "../schema/technical-regulators.schema.json",
+  "schemaVersion": "1.0.0",
+  "registryRevision": "1.0.0-draft",
+  "regulators": [
+    {
+      "id": "kcr-regulator-full-check-001",
+      "normativeBasis": [
+        {
+          "id": "kc-0047",
+          "source": "locales/ru/CONSTITUTION_CODE.md",
+          "revision": "864bf72a9072d394d77d09de40089f8f0f3ecc0ff8f77c41ef173f0852adf2ee"
+        },
+        {
+          "id": "P16",
+          "source": "locales/ru/governance/PROFILE.md",
+          "revision": "0.4.0-draft"
+        },
+        {
+          "id": "BASE-Q03",
+          "source": "locales/ru/governance/legislation/DEVELOPMENT.md",
+          "revision": "0.4.0-draft"
+        }
+      ],
+      "kind": "command-gate",
+      "effect": "require",
+      "scope": "Every repository change candidate before acceptance into the main branch.",
+      "affectedParticipants": [
+        "change executor",
+        "reviewer",
+        "accepting holder"
+      ],
+      "owner": "Maintainer under PROFILE.md P07 and P16.",
+      "configurationPaths": [
+        "package.json",
+        "package-lock.json",
+        ".github/workflows/check.yml"
+      ],
+      "defaults": [
+        { "name": "command", "value": "npm run check" },
+        { "name": "mode", "value": "check-only" }
+      ],
+      "observation": "Run the command and retain its exit status and individual check output.",
+      "changeProcedure": "Amend BASE-Q03 through BASE-C02, update this registry, and review the complete check contract.",
+      "challengeProcedure": "Open a reasoned dispute under PROFILE.md P08 and identify the affected rule and evidence.",
+      "disableProcedure": "Use only a recorded emergency suspension under PROFILE.md P14 or an adopted legislative amendment.",
+      "status": "active"
+    },
+    {
+      "id": "kcr-regulator-ci-workflow-001",
+      "normativeBasis": [
+        {
+          "id": "P16",
+          "source": "locales/ru/governance/PROFILE.md",
+          "revision": "0.4.0-draft"
+        },
+        {
+          "id": "BASE-C04",
+          "source": "locales/ru/governance/legislation/DEVELOPMENT.md",
+          "revision": "0.4.0-draft"
+        },
+        {
+          "id": "BASE-Q03",
+          "source": "locales/ru/governance/legislation/DEVELOPMENT.md",
+          "revision": "0.4.0-draft"
+        }
+      ],
+      "kind": "ci-workflow",
+      "effect": "require",
+      "scope": "Push and pull-request checks executed by GitHub Actions.",
+      "affectedParticipants": [
+        "change executor",
+        "reviewer",
+        "repository maintainer"
+      ],
+      "owner": "Repository maintainer under PROFILE.md P07.",
+      "configurationPaths": [
+        ".github/workflows/check.yml",
+        "tools.json",
+        "package.json"
+      ],
+      "defaults": [
+        { "name": "triggers", "value": "push,pull_request" },
+        { "name": "permissions", "value": "contents:read" }
+      ],
+      "observation": "Inspect the workflow run for the candidate commit and retain the immutable run URL and result.",
+      "changeProcedure": "Change the workflow in a reviewed tooling change and preserve consistency with tools.json and BASE-Q03.",
+      "challengeProcedure": "Report a mismatch between local and CI execution under PROFILE.md P08 with both logs.",
+      "disableProcedure": "Suspend only under PROFILE.md P14 or remove through an adopted replacement gate.",
+      "status": "active"
+    },
+    {
+      "id": "kcr-regulator-corpus-integrity-001",
+      "normativeBasis": [
+        {
+          "id": "kc-0321",
+          "source": "locales/ru/CONSTITUTION_CODE.md",
+          "revision": "864bf72a9072d394d77d09de40089f8f0f3ecc0ff8f77c41ef173f0852adf2ee"
+        },
+        {
+          "id": "kc-0322",
+          "source": "locales/ru/CONSTITUTION_CODE.md",
+          "revision": "864bf72a9072d394d77d09de40089f8f0f3ecc0ff8f77c41ef173f0852adf2ee"
+        },
+        {
+          "id": "KCR-Q01",
+          "source": "locales/ru/governance/legislation/DEVELOPMENT.md",
+          "revision": "0.4.0-draft"
+        }
+      ],
+      "kind": "integrity-declaration",
+      "effect": "prohibit",
+      "scope": "Canonical Russian Constitution source, its declared SHA-256, and provision count.",
+      "affectedParticipants": ["editor", "change executor", "release holder"],
+      "owner": "Maintainer under PROFILE.md P07 and P16.",
+      "configurationPaths": [
+        "locales/ru/CONSTITUTION_CODE.md",
+        "manifest/provenance.json",
+        "src/constitution-cli/main.ts"
+      ],
+      "defaults": [
+        { "name": "provisionCount", "value": 334 },
+        {
+          "name": "sourceSha256",
+          "value": "864bf72a9072d394d77d09de40089f8f0f3ecc0ff8f77c41ef173f0852adf2ee"
+        }
+      ],
+      "observation": "Run npm run check:data and compare the reported count and SHA-256 with manifest/provenance.json.",
+      "changeProcedure": "Complete the constitutional update procedure, then update provenance and every dependent declaration in one candidate.",
+      "challengeProcedure": "Identify the source bytes, expected declaration, and observed mismatch under PROFILE.md P08.",
+      "disableProcedure": "No ordinary disable path exists; emergency handling preserves the last verified canonical commit under PROFILE.md P14.",
+      "status": "active"
+    },
+    {
+      "id": "kcr-regulator-registry-contracts-001",
+      "normativeBasis": [
+        {
+          "id": "P16",
+          "source": "locales/ru/governance/PROFILE.md",
+          "revision": "0.4.0-draft"
+        },
+        {
+          "id": "BASE-C04",
+          "source": "locales/ru/governance/legislation/DEVELOPMENT.md",
+          "revision": "0.4.0-draft"
+        },
+        {
+          "id": "BASE-Q02",
+          "source": "locales/ru/governance/legislation/DEVELOPMENT.md",
+          "revision": "0.4.0-draft"
+        }
+      ],
+      "kind": "schema-validation",
+      "effect": "prohibit",
+      "scope": "Repository JSON Schemas, governed manifests, rule coverage, and technical-regulator references.",
+      "affectedParticipants": [
+        "manifest editor",
+        "schema editor",
+        "change executor"
+      ],
+      "owner": "Maintainer under PROFILE.md P07 and P16.",
+      "configurationPaths": [
+        "schema/technical-regulators.schema.json",
+        "manifest/technical-regulators.json",
+        "test/constitution-corpus/schema-contracts.test.ts",
+        "test/constitution-corpus/technical-regulator-registry.test.ts",
+        "test/release-evidence/rule-coverage.test.ts"
+      ],
+      "defaults": [
+        { "name": "jsonSchemaDraft", "value": "2020-12" },
+        { "name": "strictSchemaCompilation", "value": true }
+      ],
+      "observation": "Run npm test and npm run check:data; review schema diagnostics and source-resolution failures.",
+      "changeProcedure": "Change a schema and its governed document together, update tests, and use the ordinary BASE-C02 pass.",
+      "challengeProcedure": "Report the rejected document, schema path, normative basis, and disputed validation under PROFILE.md P08.",
+      "disableProcedure": "Replace the gate only through an adopted legislative change; emergency suspension follows PROFILE.md P14.",
+      "status": "active"
+    },
+    {
+      "id": "kcr-regulator-licensing-policy-pin-001",
+      "normativeBasis": [
+        {
+          "id": "P02",
+          "source": "locales/ru/governance/PROFILE.md",
+          "revision": "0.4.0-draft"
+        },
+        {
+          "id": "P16",
+          "source": "locales/ru/governance/PROFILE.md",
+          "revision": "0.4.0-draft"
+        },
+        {
+          "id": "BASE-Q03",
+          "source": "locales/ru/governance/legislation/DEVELOPMENT.md",
+          "revision": "0.4.0-draft"
+        }
+      ],
+      "kind": "submodule-pin",
+      "effect": "prohibit",
+      "scope": "Licensing-policy source revision and the repository license map.",
+      "affectedParticipants": [
+        "content contributor",
+        "code contributor",
+        "release holder"
+      ],
+      "owner": "Organisational publication role and maintainer under PROFILE.md P02 and P07.",
+      "configurationPaths": [
+        ".gitmodules",
+        ".licensing-policy/POLICY_VERSION",
+        "LICENSE.md",
+        "test/release-evidence/licensing-policy.test.ts"
+      ],
+      "defaults": [
+        { "name": "policyVersion", "value": "1.0.0" },
+        {
+          "name": "submoduleCommit",
+          "value": "6e4c2627717c079827ed4aa9044a5346b3ea3ddb"
+        }
+      ],
+      "observation": "Run the licensing-policy test and inspect git submodule status and LICENSE.md.",
+      "changeProcedure": "Adopt a new policy revision through PROFILE.md P02 and BASE-C02, then update the pin, license map, registry, and tests together.",
+      "challengeProcedure": "Raise a licensing-order dispute under PROFILE.md P08 and preserve the current pin until resolution.",
+      "disableProcedure": "No ordinary bypass exists; external legal obligations and PROFILE.md P14 govern emergency containment.",
+      "status": "active"
+    }
+  ],
+  "externalSettings": [
+    {
+      "id": "kcr-external-github-main-protection-001",
+      "provider": "GitHub",
+      "scope": "Branch protection or repository rulesets governing the main branch.",
+      "status": "unverified",
+      "observation": "Inspect the repository rulesets and branch-protection settings with authorised read access or query the corresponding GitHub API.",
+      "lastObservedAt": null,
+      "claim": "The repository manifest does not assert that branch protection is active until an authorised observation is recorded."
+    }
+  ]
+}

@@ -1,5 +1,12 @@
 import { randomUUID } from "node:crypto";
-import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import {
+	access,
+	mkdir,
+	readFile,
+	rename,
+	rm,
+	writeFile,
+} from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import type { CorpusFileStore } from "../application/ports.js";
 
@@ -12,6 +19,16 @@ export class NodeCorpusFileStore implements CorpusFileStore {
 
 	public async readText(path: string): Promise<string> {
 		return readFile(path, "utf8");
+	}
+
+	public async exists(path: string): Promise<boolean> {
+		try {
+			await access(path);
+
+			return true;
+		} catch {
+			return false;
+		}
 	}
 
 	public async writeAtomically(

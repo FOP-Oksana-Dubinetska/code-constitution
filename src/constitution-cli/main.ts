@@ -7,6 +7,10 @@ import {
 	CorpusValidator,
 	type CanonicalCorpusDeclaration,
 } from "../constitution-corpus/application/corpus-validator.js";
+import {
+	TechnicalRegulatorValidator,
+	type TechnicalRegulatorRegistry,
+} from "../constitution-corpus/application/technical-regulator-validator.js";
 import { NodeCorpusFileStore } from "../constitution-corpus/adapters/node-corpus-file-store.js";
 import { createCorpusPipeline } from "./composition-root.js";
 
@@ -38,11 +42,24 @@ async function run(arguments_: readonly string[]): Promise<number> {
 		const actRegistry = JSON.parse(
 			await readFile("governance/acts.json", "utf8"),
 		) as { acts: RegisteredAct[] };
-		await new ActRegistryValidator(new NodeCorpusFileStore()).validate(
-			actRegistry.acts,
+		const technicalRegulatorRegistry = JSON.parse(
+			await readFile("manifest/technical-regulators.json", "utf8"),
+		) as TechnicalRegulatorRegistry;
+		const fileStore = new NodeCorpusFileStore();
+
+		await new ActRegistryValidator(fileStore).validate(actRegistry.acts);
+		await new TechnicalRegulatorValidator(fileStore).validate(
+			technicalRegulatorRegistry.regulators,
+			[
+				{ source: declaration.source, revision: declaration.sourceSha256 },
+				...actRegistry.acts.map(({ path: source, revision }) => ({
+					source,
+					revision,
+				})),
+			],
 		);
 		console.log(
-			`Validated ${String(index.provisions.length)} provisions with source SHA-256 ${index.sourceSha256}.`,
+			`Validated ${String(index.provisions.length)} provisions with source SHA-256 ${index.sourceSha256} and ${String(technicalRegulatorRegistry.regulators.length)} technical regulators.`,
 		);
 
 		return exitCode.success;

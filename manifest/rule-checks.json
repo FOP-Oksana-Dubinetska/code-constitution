@@ -66,6 +66,37 @@
       "invariants": []
     },
     {
+      "ruleId": "BASE-C03",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "normative-translation-review",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "A reviewer verifies the exact source revision, preserved and excluded content, defaults, residual discretion, separate transition checks, ownership, and challenge path. Automated existence and field-completeness checks remain bootstrap work."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-C04",
+      "coverageStatus": "partial",
+      "invariants": [
+        {
+          "invariantId": "technical-regulator-registry",
+          "mechanism": "automated",
+          "command": "npm run check",
+          "fixtureIds": [],
+          "evidence": "JSON Schema and source-derived validation cover regulator ID uniqueness, exact normative-basis revisions, basis resolution, and local configuration-path existence."
+        },
+        {
+          "invariantId": "technical-regulator-materiality",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "A reviewer decides whether each mechanism has a material regulatory effect and whether its owner, observation, challenge, change, and disable procedures remain adequate."
+        }
+      ]
+    },
+    {
       "ruleId": "KCR-C02",
       "coverageStatus": "bootstrap-pending",
       "invariants": []
@@ -135,6 +166,11 @@
     },
     {
       "ruleId": "BASE-N03",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": []
+    },
+    {
+      "ruleId": "BASE-CSS-N01",
       "coverageStatus": "bootstrap-pending",
       "invariants": []
     },
@@ -210,6 +246,13 @@
           "command": "npm run check:data",
           "fixtureIds": ["fixture-corpus-hash-negative-001"],
           "evidence": "CLI validation compares source SHA-256 and provision count with provenance."
+        },
+        {
+          "invariantId": "question-map-parity",
+          "mechanism": "automated",
+          "command": "npm test",
+          "fixtureIds": [],
+          "evidence": "A source-derived test requires exactly 334 unique provision IDs and 334 unique question IDs, exact q-kc to kc parity, canonical links, and the declared source hash."
         }
       ]
     },
@@ -222,7 +265,7 @@
           "mechanism": "automated",
           "command": "npm test",
           "fixtureIds": [],
-          "evidence": "Schema validation and a source-derived exact-set test cover registry shape, rule ID uniqueness, and all 38 current rule IDs; evidence completeness remains pending."
+          "evidence": "Schema validation and a source-derived exact-set test cover registry shape, rule ID uniqueness, and all 41 current rule IDs, including BASE-CSS-N01; evidence completeness remains pending."
         }
       ]
     },

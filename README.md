@@ -2,7 +2,7 @@
 
 ## Bootstrap implementation status
 
-This directory is the standalone Git root of the engineering bootstrap. The current checks validate the canonical corpus hash and provision count, AST-derived provision ranges, unchanged byte-exact assembly, registry and JSON Schema contracts, selected architecture boundaries, licensing-policy pinning, and the local/CI toolchain declarations. `manifest/rule-checks.json` records implemented, partial, and bootstrap-pending coverage for the exact set of 38 development rules. Full provenance and distribution registries, cross-document links and Question Map validation, complete application and adapter architecture enforcement, deterministic generated outputs, and release attestation remain bootstrap work.
+This directory is the standalone Git root of the engineering bootstrap. The current checks validate the canonical corpus hash and provision count, AST-derived provision ranges, unchanged byte-exact assembly, Question Map parity, registry and JSON Schema contracts, technical-regulator references and configuration paths, selected architecture boundaries, licensing-policy pinning, and the local/CI toolchain declarations. `manifest/rule-checks.json` records implemented, partial, and bootstrap-pending coverage for the exact set of 41 development rules. Full provenance and distribution registries, remaining cross-document links, complete application and adapter architecture enforcement, deterministic generated outputs, and release attestation remain bootstrap work.
 
 Initialize the pinned licensing policy and install the declared toolchain dependencies before running the check contract:
 
@@ -28,6 +28,23 @@ The package-level `../SHA256SUMS` file controls the frozen handoff inputs and pr
 
 Редактируются только файлы со статусом `source` и специально разрешённые рабочие части. Каталоги и файлы со статусами `generated`, `report`, `fixture` и `external` сохраняют объявленное происхождение; производные результаты воспроизводятся из канонических источников и не заменяют их ручной правкой. Нормативный смысловой блок сохраняет устойчивый ID, а разделение, слияние, замена или выведение положения регистрируются в происхождении.
 
-Рабочая проверка начинается командами `npm ci` и `npm run check`. Текущий bootstrap-проход без сети проверяет форматирование поддерживаемых файлов, Markdown, ESLint, типизацию, схемы и манифесты, избранные архитектурные границы, устойчивые ID, канонический хеш корпуса и точность неизменённого дробления с обратной сборкой. Последующие этапы добавят полную проверку ссылок, Карты вопросов, изменённых частей, детерминированности производных результатов, их чистоты и доказательств по каждому обязательному правилу. CI выполняет действующие проверяющие режимы без изменения источников.
+Рабочая проверка начинается командами `npm ci` и `npm run check`. Текущий bootstrap-проход без сети проверяет форматирование поддерживаемых файлов, Markdown, ESLint, типизацию, схемы и манифесты, избранные архитектурные границы, устойчивые ID, соответствие Карты вопросов, канонический хеш корпуса, реестр технических регуляторов и точность неизменённого дробления с обратной сборкой. Последующие этапы добавят полную проверку остальных междокументных ссылок, изменённых частей, детерминированности производных результатов, их чистоты и доказательств по каждому обязательному правилу. CI выполняет действующие проверяющие режимы без изменения источников.
 
-Нормативное изменение сначала принимается в Конституции, Профиле или акте соответствующего класса, затем реализуется в коде и проверках. Выпуск относится к одному замороженному Git-коммиту, получает удостоверяющую запись, тег, манифест и контрольные суммы и публикуется как Git-релиз. Репозиторий собственного DOI не получает; DOI отдельной статьи Sam Starling и Oksana Dubinetska обозначает только связанную научную публикацию. Текст распространяется по `CC-BY-SA-4.0`, код — по `MIT`; общая политика подключается закреплённым сабмодулем `.licensing-policy/`, а корневой `LICENSE.md` применяет её к настоящему репозиторию.
+Нормативное изменение сначала принимается в Конституции, Профиле или акте соответствующего класса, затем реализуется в коде и проверках. Выпуск относится к одному замороженному Git-коммиту, получает удостоверяющую запись, тег, манифест и контрольные суммы и публикуется как Git-релиз.
+
+## Обновление Конституции и Законодательства
+
+1. Запишите намерение, класс изменения, затронутые ID, полномочие инициатора, последствия и план перехода.
+2. Измените канонический нормативный источник. Новый самостоятельный тезис получает новый ID; уточнение сохраняет прежний ID; изменение Законодательства остаётся внутри предоставленной компетенции.
+3. Составьте запись нормативного перевода. Зафиксируйте сохранённое и исключённое содержание, значения по умолчанию, остаточное усмотрение, технические регуляторы и способы проверки каждого перехода.
+4. Обновите связанные вопросы, Профиль, акты, реестры, схемы, хеши, манифесты, локали, проверки и историю редакций в объёме фактического изменения.
+5. Выполните `npm ci` и `npm run check`, рассмотрите полный diff и получите явное согласие компетентного носителя.
+6. Свяжите принятую редакцию с точным Git SHA и, при выпуске, создайте удостоверяющую запись, тег, манифест и контрольные суммы.
+
+Изменение Законодательства, которое затрагивает основной порядок, предел полномочия или защищённое положение, проходит как поправка к Конституции. Автоматическая проверка подтверждает только выраженные ею условия; содержательное принятие и ратификация сохраняют человеческого адресата.
+
+## Внешний LLM-процесс
+
+Для ограниченного и трассируемого исполнения задач LLM может использоваться внешний адаптер [Prompt-Literate Workflow: Code Constitution integration](https://github.com/IRONCREED/prompt-literate-workflow/tree/main/integrations/code-constitution). Он закрепляет редакции обоих источников, связывает Конституцию, Профиль и Законодательство с планом, контрактами, сценариями и TRACE и сохраняет вывод модели кандидатным артефактом до проверки и человеческого принятия. Адаптер остаётся внешним расширением и не входит в нормативный корпус настоящего репозитория.
+
+Репозиторий собственного DOI не получает; DOI отдельной статьи Sam Starling и Oksana Dubinetska обозначает только связанную научную публикацию. Текст распространяется по `CC-BY-SA-4.0`, код — по `MIT`; общая политика подключается закреплённым сабмодулем `.licensing-policy/`, а корневой `LICENSE.md` применяет её к настоящему репозиторию.
