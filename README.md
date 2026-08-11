@@ -1,3 +1,5 @@
+![Гербовый логотип со скворцом](./Starling.png)
+
 # Code Constitution
 
 <details open>
