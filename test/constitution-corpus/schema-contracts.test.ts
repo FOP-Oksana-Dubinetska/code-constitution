@@ -8,6 +8,7 @@ const contracts = [
 	["schema/locale.schema.json", "locales/ru/LOCALE.json"],
 	["schema/locale.schema.json", "locales/uk/LOCALE.json"],
 	["schema/locale.schema.json", "locales/en/LOCALE.json"],
+	["schema/locale.schema.json", "locales/be/LOCALE.json"],
 	["schema/acts.schema.json", "governance/acts.json"],
 	["schema/provenance.schema.json", "manifest/provenance.json"],
 	["schema/distribution.schema.json", "manifest/distribution.json"],

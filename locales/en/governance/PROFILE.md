@@ -4,7 +4,7 @@
 
 Document identifier: `kcr-profile-001`.
 
-Revision: `0.5.0-draft`.
+Revision: `0.6.0-draft`.
 
 Draft date: 2026-07-30.
 
@@ -138,9 +138,9 @@ canonical corpus. Reassembly from permitted working fragments first creates a
 candidate canonical state, which then undergoes full verification and the
 ordinary change procedure.
 
-The repository establishes the `ru`, `uk`, and `en` locales; their codes follow
+The repository establishes the `en`, `ru`, `uk`, and `be` locales; their codes follow
 BCP 47. Russian is the normative locale of the Constitution, Profile, and
-Glossary. The English and Ukrainian locales proceed through the `planned`,
+Glossary. The English, Ukrainian, and Belarusian locales proceed through the `planned`,
 `candidate`, and `informative` states. `candidate` means that a complete,
 machine-verified translation exists and awaits substantive human review.
 `informative` is assigned following that review, with the translator, reviewer,
@@ -156,8 +156,8 @@ normative priority of the localised Russian corpus and the language of a
 particular single-language act are therefore declared expressly and are not
 inferred from file location.
 
-The root README expands the English description by default; Ukrainian and
-Russian versions appear in collapsible sections. The README serves as an entry
+The root README expands the English description by default; Russian, Ukrainian, and
+Belarusian versions appear in collapsible sections in that order. The README serves as an entry
 point and does not replace the normative source. A derivative revision that
 changes the text of the Constitution replaces in the README its own project
 identity, official repository, holders of authority, and status statement,
@@ -422,8 +422,8 @@ Transition to the order in force proceeds through the following sequence:
    retired provisions;
 5. allocate provisions among the Constitution, Founding Profile, Legislation,
    and research corpus;
-6. create manifests for the `ru`, `uk`, and `en` locales, place the normative
-   Russian corpus and candidate English and Ukrainian translations;
+6. create manifests for the `en`, `ru`, `uk`, and `be` locales, place the normative
+   Russian corpus and candidate English, Ukrainian, and Belarusian translations;
 7. adopt the model of canonical sources and derivative representations;
 8. implement splitting of the mother document and reassembly;
 9. introduce checks of the round trip, links, hashes, tables, Question Map,
@@ -461,7 +461,7 @@ recognition.
 
 | Act ID | Classes | Name | Status |
 | --- | --- | --- | --- |
-| `kcr-act-development-001` | Z01, Z02, Z07, Z08, Z09, Z11 | Development and source-processing regulation | Draft `0.5.0-draft` |
+| `kcr-act-development-001` | Z01, Z02, Z07, Z08, Z09, Z11 | Development and source-processing regulation | Draft `0.6.0-draft` |
 | `kcr-glossary-001` | Z11 | Software terminology glossary | Draft `0.3.0-draft` |
 
 P03, P08, P13, P14, and P18 establish minimum rules for the subjects of Z03,
@@ -505,3 +505,4 @@ result, moment of force, and state of transition.
 | `0.3.0-draft` | 2026-07-27 | Licensing hierarchy, technical enforcement, and transition to implementation refined |
 | `0.4.0-draft` | 2026-07-30 | Normative-translation evidence and the technical-regulator registry established |
 | `0.5.0-draft` | 2026-07-30 | Candidate English and Ukrainian locales, English as the repository default, and the single-language English Development Regulation established |
+| `0.6.0-draft` | 2026-11-17 | Registered Belarusian localization and the optional BASE-UI act |

@@ -14,16 +14,30 @@
     "responsibleRole"
   ],
   "properties": {
-    "$schema": { "type": "string" },
-    "code": { "enum": ["ru", "uk", "en"] },
-    "status": { "enum": ["normative", "planned", "candidate", "informative"] },
-    "sourceLocale": { "type": ["string", "null"] },
+    "$schema": {
+      "type": "string"
+    },
+    "code": {
+      "enum": ["en", "ru", "uk", "be"]
+    },
+    "status": {
+      "enum": ["normative", "planned", "candidate", "informative"]
+    },
+    "sourceLocale": {
+      "type": ["string", "null"]
+    },
     "sourceSha256": {
       "type": ["string", "null"],
       "pattern": "^[a-f0-9]{64}$"
     },
-    "translator": { "type": ["string", "null"], "minLength": 1 },
-    "reviewer": { "type": ["string", "null"], "minLength": 1 },
+    "translator": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
     "lastStructuralCheck": {
       "type": ["string", "null"],
       "format": "date"
@@ -32,7 +46,10 @@
       "type": ["string", "null"],
       "format": "date"
     },
-    "responsibleRole": { "type": "string", "minLength": 1 }
+    "responsibleRole": {
+      "type": "string",
+      "minLength": 1
+    }
   },
   "additionalProperties": false
 }

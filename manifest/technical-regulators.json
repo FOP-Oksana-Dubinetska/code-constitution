@@ -14,12 +14,12 @@
         {
           "id": "P16",
           "source": "locales/ru/governance/PROFILE.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         },
         {
           "id": "BASE-Q03",
           "source": "governance/legislation/DEVELOPMENT.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         }
       ],
       "kind": "command-gate",
@@ -52,17 +52,17 @@
         {
           "id": "P16",
           "source": "locales/ru/governance/PROFILE.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         },
         {
           "id": "BASE-C04",
           "source": "governance/legislation/DEVELOPMENT.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         },
         {
           "id": "BASE-Q03",
           "source": "governance/legislation/DEVELOPMENT.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         }
       ],
       "kind": "ci-workflow",
@@ -105,7 +105,7 @@
         {
           "id": "KCR-Q01",
           "source": "governance/legislation/DEVELOPMENT.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         }
       ],
       "kind": "integrity-declaration",
@@ -137,17 +137,17 @@
         {
           "id": "P16",
           "source": "locales/ru/governance/PROFILE.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         },
         {
           "id": "BASE-C04",
           "source": "governance/legislation/DEVELOPMENT.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         },
         {
           "id": "BASE-Q02",
           "source": "governance/legislation/DEVELOPMENT.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         }
       ],
       "kind": "schema-validation",
@@ -182,17 +182,17 @@
         {
           "id": "P02",
           "source": "locales/ru/governance/PROFILE.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         },
         {
           "id": "P16",
           "source": "locales/ru/governance/PROFILE.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         },
         {
           "id": "BASE-Q03",
           "source": "governance/legislation/DEVELOPMENT.md",
-          "revision": "0.5.0-draft"
+          "revision": "0.6.0-draft"
         }
       ],
       "kind": "submodule-pin",

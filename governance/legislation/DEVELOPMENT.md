@@ -4,7 +4,7 @@
 
 Act identifier: `kcr-act-development-001`.
 
-Revision: `0.5.0-draft`.
+Revision: `0.6.0-draft`.
 
 Legislation classes: Z01, Z02, Z07, Z08, Z09, Z11.
 
@@ -75,13 +75,13 @@ full check, and ordinary adoption of the change.
 
 ### KCR-S03. Locales, Repository Default, and README
 
-The locale registry institutes `ru`, `uk`, and `en` and sets `en` as the
+The locale registry institutes `en`, `ru`, `uk`, and `be` and sets `en` as the
 repository default. Each locale receives a machine-readable manifest containing
 its BCP 47 code, status, source revision, authors or translators, reviewers, and
 the dates of the latest structural and substantive checks.
 
-The complete normative source of the first revision is `ru`. A complete `uk` or
-`en` translation that has passed structural parity checks receives `candidate`
+The complete normative source of the first revision is `ru`. A complete `en`, `uk`, or
+`be` translation that has passed structural parity checks receives `candidate`
 status. Candidate status means that the text is complete and machine-checked
 but awaits human substantive review; it creates no independent normative
 effect. After that review, the locale receives `informative` status. If a
@@ -94,8 +94,8 @@ maintained in only one language use English unless the Founding Profile or acts
 registry expressly establishes another language. An English-only act remains
 canonical in the language and path recorded in that registry.
 
-The root README displays the complete English description. Complete Ukrainian
-and Russian versions appear below in collapsible sections. The language form of
+The root README displays the complete English description. Complete Russian,
+Ukrainian, and Belarusian versions appear below in that order in collapsible sections. The language form of
 the README does not change the normative language of the corpus.
 
 A change to a localized canonical source updates all applicable translations in
@@ -745,3 +745,9 @@ extension.
 | `0.3.0-draft` | 2026-07-27 | Consolidated stanza style, semantic naming, architecture, evidence, dependencies, and waivers |
 | `0.4.0-draft` | 2026-07-30 | Introduced the normative-translation record and technical-regulator registry |
 | `0.5.0-draft` | 2026-07-30 | Established the English repository default, candidate translation status, and localization-parity checks |
+
+| `0.6.0-draft` | 2026-11-17 | Registered Belarusian localization and the optional portable BASE-UI act |
+
+## Visual interface profile
+
+Projects with a visual interface may select the portable [BASE-UI act](INTERFACE.md). Its seven rules cover text roles and tokens, readability, scaling and locales, font provenance, meaningful labels, interface families and the declared visual verification matrix. Typeface and palette remain local Profile parameters. Selection and migration follow the consuming project’s own procedure.

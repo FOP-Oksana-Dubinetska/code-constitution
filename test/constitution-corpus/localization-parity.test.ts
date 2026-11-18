@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
 
-const locales = ["ru", "en", "uk"] as const;
+const locales = ["ru", "en", "uk", "be"] as const;
 
 function captures(source: string, pattern: RegExp): string[] {
 	return [...source.matchAll(pattern)].map((match) => {
@@ -28,6 +28,7 @@ describe("localization parity", () => {
 		expect(identifiers[0]).toHaveLength(334);
 		expect(identifiers[1]).toEqual(identifiers[0]);
 		expect(identifiers[2]).toEqual(identifiers[0]);
+		expect(identifiers[3]).toEqual(identifiers[0]);
 	});
 
 	it("preserves all 18 Founding Profile fields in every locale", async () => {
@@ -43,6 +44,7 @@ describe("localization parity", () => {
 		expect(identifiers[0]).toHaveLength(18);
 		expect(identifiers[1]).toEqual(identifiers[0]);
 		expect(identifiers[2]).toEqual(identifiers[0]);
+		expect(identifiers[3]).toEqual(identifiers[0]);
 	});
 
 	it("preserves all 47 Glossary terms in every locale", async () => {
@@ -58,5 +60,6 @@ describe("localization parity", () => {
 		expect(identifiers[0]).toHaveLength(47);
 		expect(identifiers[1]).toEqual(identifiers[0]);
 		expect(identifiers[2]).toEqual(identifiers[0]);
+		expect(identifiers[3]).toEqual(identifiers[0]);
 	});
 });

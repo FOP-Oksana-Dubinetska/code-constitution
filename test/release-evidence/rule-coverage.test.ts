@@ -2,11 +2,14 @@ import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
 
 describe("rule coverage registry", () => {
-	it("contains the exact unique set of all 41 development rule IDs", async () => {
-		const development = await readFile(
-			"governance/legislation/DEVELOPMENT.md",
-			"utf8",
-		);
+	it("contains the exact unique set of all 48 development and interface rule IDs", async () => {
+		const development = (
+			await Promise.all(
+				["DEVELOPMENT", "INTERFACE"].map((act) =>
+					readFile(`governance/legislation/${act}.md`, "utf8"),
+				),
+			)
+		).join("\n");
 		const expected = [
 			...development.matchAll(
 				/^### ((?:BASE|KCR)-[A-Z0-9]+(?:-[A-Z0-9]+)*)\./gm,
@@ -19,10 +22,10 @@ describe("rule coverage registry", () => {
 		};
 		const actual = registry.rules.map(({ ruleId }) => ruleId);
 
-		expect(expected).toHaveLength(41);
-		expect(new Set(expected).size).toBe(41);
-		expect(actual).toHaveLength(41);
-		expect(new Set(actual).size).toBe(41);
+		expect(expected).toHaveLength(48);
+		expect(new Set(expected).size).toBe(48);
+		expect(actual).toHaveLength(48);
+		expect(new Set(actual).size).toBe(48);
 		expect([...actual].sort()).toEqual([...expected].sort());
 	});
 });

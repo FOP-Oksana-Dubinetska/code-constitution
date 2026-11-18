@@ -13,7 +13,7 @@ function uniqueMatches(source: string, pattern: RegExp): string[] {
 }
 
 describe("localized Question Maps", () => {
-	it.each(["ru", "en", "uk"] as const)(
+	it.each(["ru", "en", "uk", "be"] as const)(
 		"maintains exact 334/334 parity in the %s locale",
 		async (locale) => {
 			const constitution = await readFile(

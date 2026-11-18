@@ -319,6 +319,90 @@
       "ruleId": "BASE-X02",
       "coverageStatus": "bootstrap-pending",
       "invariants": []
+    },
+    {
+      "ruleId": "BASE-UI01",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": [
+        {
+          "invariantId": "interface-profile-review-01",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "INTERFACE.md BASE-UI01 defines the required local evidence. A consuming project supplies its profile, affected visual matrix and actual review; no consumer acceptance is asserted here."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-UI02",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": [
+        {
+          "invariantId": "interface-profile-review-02",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "INTERFACE.md BASE-UI02 defines the required local evidence. A consuming project supplies its profile, affected visual matrix and actual review; no consumer acceptance is asserted here."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-UI03",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": [
+        {
+          "invariantId": "interface-profile-review-03",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "INTERFACE.md BASE-UI03 defines the required local evidence. A consuming project supplies its profile, affected visual matrix and actual review; no consumer acceptance is asserted here."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-UI04",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": [
+        {
+          "invariantId": "interface-profile-review-04",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "INTERFACE.md BASE-UI04 defines the required local evidence. A consuming project supplies its profile, affected visual matrix and actual review; no consumer acceptance is asserted here."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-UI05",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": [
+        {
+          "invariantId": "interface-profile-review-05",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "INTERFACE.md BASE-UI05 defines the required local evidence. A consuming project supplies its profile, affected visual matrix and actual review; no consumer acceptance is asserted here."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-UI06",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": [
+        {
+          "invariantId": "interface-profile-review-06",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "INTERFACE.md BASE-UI06 defines the required local evidence. A consuming project supplies its profile, affected visual matrix and actual review; no consumer acceptance is asserted here."
+        }
+      ]
+    },
+    {
+      "ruleId": "BASE-UI07",
+      "coverageStatus": "bootstrap-pending",
+      "invariants": [
+        {
+          "invariantId": "interface-profile-review-07",
+          "mechanism": "human-review",
+          "fixtureIds": [],
+          "evidence": "INTERFACE.md BASE-UI07 defines the required local evidence. A consuming project supplies its profile, affected visual matrix and actual review; no consumer acceptance is asserted here."
+        }
+      ]
     }
   ]
 }

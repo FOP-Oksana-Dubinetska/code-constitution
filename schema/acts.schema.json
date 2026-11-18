@@ -15,7 +15,7 @@
       "properties": {
         "id": { "type": "string", "pattern": "^kcr-[a-z-]+-[0-9]{3}$" },
         "path": { "type": "string" },
-        "language": { "enum": ["ru", "uk", "en"] },
+        "language": { "enum": ["ru", "uk", "en", "be"] },
         "revision": { "type": "string" },
         "status": { "const": "draft" }
       },

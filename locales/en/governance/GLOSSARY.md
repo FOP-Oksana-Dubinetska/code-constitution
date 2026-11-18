@@ -21,7 +21,7 @@ only within the scope of the act that adopted the Glossary.
 
 A technical name in code uses the English form. Documentation uses the primary
 form of its locale and may state the English equivalent at the first material
-occurrence. The Russian, Ukrainian, and English revisions preserve the same term
+occurrence. The English, Russian, Ukrainian, and Belarusian revisions preserve the same term
 IDs. If their meanings diverge, the normative Russian revision governs.
 Synonyms are permitted in ordinary prose when they do not obscure a difference
 in duties.
@@ -330,7 +330,7 @@ A new term is added when existing definitions do not precisely name a distinct
 duty, boundary, or state. The entry contains:
 
 - a stable ID;
-- Russian, Ukrainian, and English forms;
+- English, Russian, Ukrainian, and Belarusian forms;
 - a positive definition;
 - its scope of use;
 - its relation to adjacent terms;

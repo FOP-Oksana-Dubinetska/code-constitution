@@ -3,7 +3,7 @@ import { CorpusInvariantError } from "../domain/corpus.js";
 export interface RegisteredAct {
 	readonly id: string;
 	readonly path: string;
-	readonly language: "ru" | "uk" | "en";
+	readonly language: "ru" | "uk" | "en" | "be";
 	readonly revision: string;
 	readonly status: "draft";
 }

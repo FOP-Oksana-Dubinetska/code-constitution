@@ -9,16 +9,37 @@
     "locales"
   ],
   "properties": {
-    "$schema": { "type": "string" },
-    "schemaVersion": { "const": "1.1.0" },
-    "normativeLocale": { "const": "ru" },
-    "repositoryDefaultLocale": { "const": "en" },
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": "1.1.0"
+    },
+    "normativeLocale": {
+      "const": "ru"
+    },
+    "repositoryDefaultLocale": {
+      "const": "en"
+    },
     "locales": {
       "type": "array",
-      "prefixItems": [{ "const": "ru" }, { "const": "uk" }, { "const": "en" }],
+      "prefixItems": [
+        {
+          "const": "en"
+        },
+        {
+          "const": "ru"
+        },
+        {
+          "const": "uk"
+        },
+        {
+          "const": "be"
+        }
+      ],
       "items": false,
-      "minItems": 3,
-      "maxItems": 3
+      "minItems": 4,
+      "maxItems": 4
     }
   },
   "additionalProperties": false
